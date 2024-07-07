@@ -1,0 +1,38 @@
+[debug] [2024-07-07T21:12:04.771Z] ----------------------------------------------------------------------
+[debug] [2024-07-07T21:12:04.775Z] Command:       /nix/store/2hxfkbdbwh2s7rc20khzq8sjnywq0xs8-nodejs-18.19.1/bin/node /nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/bin/firebase.js init hosting
+[debug] [2024-07-07T21:12:04.776Z] CLI Version:   13.9.0
+[debug] [2024-07-07T21:12:04.777Z] Platform:      linux
+[debug] [2024-07-07T21:12:04.777Z] Node Version:  v18.19.1
+[debug] [2024-07-07T21:12:04.777Z] Time:          Sun Jul 07 2024 21:12:04 GMT+0000 (Coordinated Universal Time)
+[debug] [2024-07-07T21:12:04.778Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-07T21:12:04.789Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/user/web-ide
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2024-07-07T21:13:09.624Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-07-07T21:13:09.624Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"Web IDE","name":"Web IDE"}
+[debug] [2024-07-07T21:13:10.326Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2024-07-07T21:13:10.327Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"field [project_id] has issue [project_id contains invalid characters]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id contains invalid characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2024-07-07T21:13:10.336Z] FirebaseError: HTTP Error: 400, field [project_id] has issue [project_id contains invalid characters]
+    at responseToError (/nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/responseToError.js:49:12)
+    at RetryOperation._fn (/nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/apiv2.js:305:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
